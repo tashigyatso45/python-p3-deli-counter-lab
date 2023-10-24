@@ -3,18 +3,20 @@ katz_deli = []
 
 def line(katz_deli):
     number = 1
-    in_line = []
     if katz_deli == []:
         print('The line is currently empty.')
     else: 
-        for people in katz_deli:
-            print(f'The line is currently: {number}. {people}')
-            number += 1
+        line_message = 'The line is currently:'
+        for i, person in enumerate(katz_deli, start=1):
+            line_message += f' {i}. {person}'
+        print(line_message)
     
 
 def take_a_number(katz_deli, name):
     katz_deli.append(name)
     print(f'Welcome, {name}. You are number {len(katz_deli)} in line.')
+    
+
 def now_serving(katz_deli):
     if katz_deli == []:
         print('There is nobody waiting to be served.')
